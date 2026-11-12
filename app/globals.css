@@ -27,3 +27,8 @@
 .cut-visual img{width:calc(100% - 92px);height:100%;right:0;object-fit:contain;object-position:center}
 @media(max-width:760px){.cut-visual img{width:calc(100% - 70px);right:0}.carousel-controls{gap:10px}.dots{gap:0}.dots button{width:20px;padding:7px}}
 .hero-image{object-fit:contain;mask-image:none}
+/* Hero ocupa toda a área; posições de texto e ações preservadas. */
+.hero-image{inset:0;width:100%;height:100%;max-width:100%;left:0;bottom:0;transform:none;object-fit:cover;object-position:center top;mask-image:none}
+.hero:after{display:none}
+
+@media(max-width:760px){.hero-image{object-position:63% top}}
