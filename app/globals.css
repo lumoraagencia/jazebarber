@@ -21,3 +21,9 @@
 .footer-links svg{color:var(--text)}
 .footer-top>p{font-family:var(--display);font-size:clamp(17px,2.2vw,30px);font-weight:700;line-height:1.25;white-space:nowrap;letter-spacing:0}
 @media(max-width:760px){.footer-top>p{grid-column:1/-1;font-size:clamp(17px,4.4vw,26px)}}
+
+/* Fotos oficiais: arquivo integral, sem corte ou tratamento. */
+.cut-card{filter:none}
+.cut-visual img{width:calc(100% - 92px);height:100%;right:0;object-fit:contain;object-position:center}
+@media(max-width:760px){.cut-visual img{width:calc(100% - 70px);right:0}.carousel-controls{gap:10px}.dots{gap:0}.dots button{width:20px;padding:7px}}
+.hero-image{object-fit:contain;mask-image:none}
