@@ -1,0 +1,2 @@
+import {copyFileSync,writeFileSync} from 'node:fs';import {fileURLToPath} from 'node:url';
+const base=fileURLToPath(new URL('.',import.meta.url));copyFileSync(base+'worker.mjs',base+'../netlify/dist/_worker.js');writeFileSync(base+'../netlify/dist/_redirects','/* /index.html 200\n');writeFileSync(base+'../netlify/dist/_routes.json',JSON.stringify({version:1,include:['/api/*'],exclude:[]}));console.log('Cloudflare Pages preparado; agenda compartilhada preservada.');
