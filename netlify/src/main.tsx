@@ -1,0 +1,1 @@
+import React from 'react';import{createRoot}from'react-dom/client';import Home from './Home';import Cancel from './Cancel';import './styles.css';createRoot(document.getElementById('root')!).render(location.pathname==='/cancelar'?<Cancel/>:<Home/>);

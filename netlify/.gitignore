@@ -1,0 +1,6 @@
+/dist/
+/node_modules/
+/src/Home.tsx
+/src/Cancel.tsx
+/src/styles.css
+/src/lib/
