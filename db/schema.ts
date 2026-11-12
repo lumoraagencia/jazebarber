@@ -1,0 +1,2 @@
+import {sqliteTable,text,integer,uniqueIndex} from 'drizzle-orm/sqlite-core';
+export const bookings=sqliteTable('bookings',{id:text('id').primaryKey(),date:text('date').notNull(),time:text('time').notNull(),serviceId:text('service_id').notNull(),name:text('name').notNull(),phone:text('phone').notNull(),cancelHash:text('cancel_hash').notNull(),createdAt:integer('created_at').notNull()},t=>[uniqueIndex('booking_slot_unique').on(t.date,t.time),uniqueIndex('booking_cancel_unique').on(t.cancelHash)]);
