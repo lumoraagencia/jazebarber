@@ -1,3 +1,3 @@
-// Shared catalog includes Corte social (catalogo11) for frontend and booking API.
+// Shared catalog and booking hours (08:00–19:00) are used by frontend and API.
 import {cpSync,mkdirSync} from 'node:fs';import {fileURLToPath} from 'node:url';import path from 'node:path';import {build} from 'vite';import react from '@vitejs/plugin-react';
 const root=fileURLToPath(new URL('.',import.meta.url));mkdirSync(root+'src/lib',{recursive:true});for(const [from,to] of [['../app/page.tsx','src/Home.tsx'],['../app/cancelar/page.tsx','src/Cancel.tsx'],['../app/globals.css','src/styles.css'],['../lib/catalog.ts','src/lib/catalog.ts']])cpSync(path.resolve(root,from),path.resolve(root,to));await build({configFile:false,root,publicDir:path.resolve(root,'../public'),plugins:[react()],resolve:{alias:{'@':path.resolve(root,'src')}},build:{outDir:'dist',emptyOutDir:true}});
