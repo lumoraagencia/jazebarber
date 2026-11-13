@@ -3,7 +3,7 @@ const reply=(data:any,status=200)=>Response.json(data,{status,headers:{'Cache-Co
 const hash=async(t:string)=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)))).map(x=>x.toString(16).padStart(2,'0')).join('');
 export async function handle(request:Request,store:any){
  const url=new URL(request.url),route=url.pathname.split('/').filter(Boolean).pop();
- if(request.method==='GET'&&route==='availability'){const date=url.searchParams.get('date')||'';if(!isOpenDate(date))return reply({error:'Escolha uma data de terça a domingo, a partir de hoje.'},400);const entries=await Promise.all(slots.map(t=>store.get(`slots/${date}/${t}`,{type:'json'})));return reply({occupied:entries.filter(x=>x&&!x.cancelled).map(x=>x.time)});}
+ if(request.method==='GET'&&route==='availability'){const date=url.searchParams.get('date')||'';if(!isOpenDate(date))return reply({error:'Escolha uma data a partir de hoje.'},400);const entries=await Promise.all(slots.map(t=>store.get(`slots/${date}/${t}`,{type:'json'})));return reply({occupied:entries.filter(x=>x&&!x.cancelled).map(x=>x.time)});}
  if(request.method!=='POST')return reply({error:'Rota não encontrada.'},404);
  const origin=request.headers.get('origin');if(origin&&origin!==url.origin)return reply({error:'Origem não permitida.'},403);
  if(Number(request.headers.get('content-length')||0)>4096)return reply({error:'Dados inválidos.'},413);
