@@ -32,3 +32,22 @@
 .hero:after{display:none}
 
 @media(max-width:760px){.hero-image{object-position:63% top}}
+
+/* Fotos originais de novembro: sem filtros ou recompressão. */
+.hero{background:#c9c8c6;height:min(830px,calc(100svh - 88px));min-height:0;max-height:100svh}
+.hero-image{object-fit:cover;object-position:center 35%}
+.barber-pole{width:46.667px;right:-27.333px}
+.barber-pole>img{width:100%;height:100%;object-fit:contain}
+@media(max-width:760px){
+ .hero{height:auto;max-height:none;min-height:0;padding-top:154px;padding-bottom:120px}
+ .hero-image{position:relative;inset:auto;width:100%;height:auto;object-fit:contain;object-position:center;transform:none}
+ .hero-action{bottom:24px}
+ .dots button{width:17px;padding:5.5px}
+}
+
+@media(min-width:761px){
+ .hero{height:min(830px,calc(100svh - 88px),50.714vw)}
+ .hero-copy{top:10%;left:6%;right:auto;width:42%;text-align:left}
+ .hero h1{font-size:clamp(50px,6.8vw,108px);white-space:normal;max-width:8ch}
+ .hero-copy p{font-size:clamp(16px,1.8vw,25px);letter-spacing:-.025em}
+}
