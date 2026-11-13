@@ -63,3 +63,5 @@
  .barber-pole{width:56px;height:202px;right:-63px;top:calc(32% - 17px)}
 }
 @media(max-width:360px){.barber-pole{width:50px;height:180px;right:-57px;top:calc(32% - 6px)}}
+/* Preserva a foto completa também em janelas baixas. */
+.hero-image{object-fit:contain;object-position:center}
