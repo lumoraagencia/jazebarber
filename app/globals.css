@@ -51,3 +51,14 @@
  .hero h1{font-size:clamp(50px,6.8vw,108px);white-space:normal;max-width:8ch}
  .hero-copy p{font-size:clamp(16px,1.8vw,25px);letter-spacing:-.025em}
 }
+/* Poste médio, com dois suportes metálicos presos à moldura. */
+.barber-pole{width:64px;height:230px;right:-65px;top:calc(32% - 31px);isolation:isolate}
+.barber-pole>img{position:relative;z-index:1}
+.barber-pole:before,.barber-pole:after{content:'';position:absolute;z-index:0;left:-9px;width:43px;height:27px;border-radius:3px;background:linear-gradient(90deg,#545451,#e3e2dc 40%,#93938d 75%,#484845) left center/8px 100% no-repeat,linear-gradient(180deg,#53534f,#e7e6df 35%,#a4a49c 60%,#42423e) center/100% 8px no-repeat;filter:drop-shadow(2px 3px 2px #0009)}
+.barber-pole:before{top:25%}
+.barber-pole:after{bottom:23%}
+@media(min-width:761px) and (max-width:1050px){.barber-pole{right:-53px}}
+@media(max-width:760px){
+ .barber-pole{width:56px;height:202px;right:-20px;top:calc(32% - 17px)}
+ .barber-pole:before,.barber-pole:after{left:26px;width:19px;background-position:right center,center}
+}
