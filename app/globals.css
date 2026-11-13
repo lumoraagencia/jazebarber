@@ -65,3 +65,10 @@
 @media(max-width:360px){.barber-pole{width:50px;height:180px;right:-57px;top:calc(32% - 6px)}}
 /* Preserva a foto completa também em janelas baixas. */
 .hero-image{object-fit:contain;object-position:center}
+@media(min-width:761px){
+ .hero{height:min(830px,calc(100svh - 88px))}
+ .hero-copy{top:4.4%;left:4%;right:4%;width:auto;text-align:center}
+ .hero h1{font-size:clamp(86px,10.6vw,158px);white-space:nowrap;max-width:none}
+ .hero-copy p{font-size:clamp(18px,2.3vw,31px);letter-spacing:-.035em}
+ .hero-image{top:clamp(164px,17vw,230px);height:calc(100% - clamp(164px,17vw,230px));object-fit:contain;object-position:center bottom}
+}
